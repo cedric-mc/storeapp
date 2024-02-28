@@ -1,5 +1,5 @@
 [
-    {"name": "Computer", "description": "A nice laptop computer", "price": 499.97},
+    {"name": "Computer", "description": "A nice laptop computer", "price": 499.97, "picture": "/public/s-l1600.jpg"},
     {"name": "Mouse", "description": "A beautiful mouse that does not bite", "price": 10.23},
     {"name": "Keyboard", "description": "A convenient QWERTY keyboard with mechanical switches", "price": 57.99},
     {"name": "Fish", "description": "One kilogram of fresh codfish (not to be eaten after April 1st)", "price": 57.99},

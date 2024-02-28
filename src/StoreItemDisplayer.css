@@ -15,7 +15,6 @@
     text-align: center;
     font-size: 1.5rem;
     margin: 1rem;
-    padding: 1rem;
 }
 
 .storeItem:hover h2 {
@@ -26,7 +25,6 @@
     text-align: center;
     font-size: 1rem;
     margin: 1rem;
-    padding: 1rem;
 }
 
 /* Change background-color #5500a5 of storeItem when discount is present */
@@ -47,3 +45,10 @@
 .storeItem div {
     text-align: center;
 }
+
+/* .storeItemPicture {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto;
+    padding: 0;
+} */
