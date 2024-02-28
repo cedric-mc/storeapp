@@ -3,4 +3,5 @@ export interface StoreItem {
     description: string;
     price: number;
     discount?: number;
+    picture?: string;
 }

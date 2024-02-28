@@ -43,3 +43,7 @@
 .storeItem:hover .discount {
     color: #ff6666;
 }
+
+.storeItem div {
+    text-align: center;
+}
