@@ -1,0 +1,14 @@
+[
+    {"name": "Computer", "description": "A nice laptop computer", "price": 499.97},
+    {"name": "Mouse", "description": "A beautiful mouse that does not bite", "price": 10.23},
+    {"name": "Keyboard", "description": "A convenient QWERTY keyboard with mechanical switches", "price": 57.99},
+    {"name": "Fish", "description": "One kilogram of fresh codfish (not to be eaten after April 1st)", "price": 57.99},
+    {"name": "Book", "description": "A book about the history of the internet", "price": 12.99},
+    {"name": "Headphones", "description": "A pair of noise-cancelling headphones", "price": 299.99},
+    {"name": "Monitor", "description": "A 27-inch 4K monitor", "price": 399.99},
+    {"name": "Lamp", "description": "A desk lamp with adjustable brightness", "price": 29.99},
+    {"name": "Chair", "description": "A comfortable office chair", "price": 149.99},
+    {"name": "Desk", "description": "A sturdy desk with a large surface", "price": 199.99},
+    {"name": "Phone", "description": "A smartphone with a 6-inch display", "price": 699.99, "discount": 0.10},
+    {"name": "Tablet", "description": "A tablet with a 10-inch display", "price": 299.99, "discount": 0.05}
+]
