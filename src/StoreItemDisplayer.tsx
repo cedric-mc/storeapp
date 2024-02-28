@@ -8,7 +8,7 @@ export const StoreItemDisplayer = (props: { item: StoreItem }) => {
             <h2>{item.name}</h2>
             <p>{item.description}</p>
             {
-                item.discount !== undefined ? <p className="discount">{item.price * item.discount}</p> : <p>{item.price.toFixed(2) + " €"}</p>
+                item.discount !== undefined ? <p className="discount">{(item.price * item.discount).toFixed(2) + " €"}</p> : <p>{item.price.toFixed(2) + " €"}</p>
             }
             {item.discount !== undefined ? <div>Discount!</div> : <div>Normal price!</div>}
             {item.discount && <p className="discount">{item.discount.toFixed(2)}</p>}
