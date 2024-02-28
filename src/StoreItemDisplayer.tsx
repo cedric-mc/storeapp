@@ -1,7 +1,7 @@
 import { StoreItem } from "./StoreItem";
 import './StoreItemDisplayer.css';
 
-export const StoreItemDisplayer = (props: { item: StoreItem }) => {
+const StoreItemDisplayer = (props: { item: StoreItem }) => {
     const item = props.item;
     return (
         <div className="storeItem">

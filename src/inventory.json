@@ -1,7 +1,7 @@
 [
     {"name": "Computer", "description": "A nice laptop computer", "price": 499.97, "picture": "pictures/computer.jpg"},
     {"name": "Mouse", "description": "A beautiful mouse that does not bite", "price": 10.23, "picture": "pictures/mouse.jpg"},
-    {"name": "Keyboard", "description": "A convenient QWERTY keyboard with mechanical switches", "price": 57.99},
+    {"name": "Keyboard", "description": "A convenient QWERTY keyboard with mechanical switches", "price": 57.99, "picture": "pictures/keyboard.jpg"},
     {"name": "Fish", "description": "One kilogram of fresh codfish (not to be eaten after April 1st)", "price": 57.99},
     {"name": "Book", "description": "A book about the history of the internet", "price": 12.99, "picture": "pictures/book.jpg"},
     {"name": "Headphones", "description": "A pair of noise-cancelling headphones", "price": 299.99},
