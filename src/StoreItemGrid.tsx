@@ -5,6 +5,9 @@ import inventory from "./inventory.json";
 
 const StoreItemGrid = ({}) => {
     const [searchTerm, setSearchTerm] = React.useState("");
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+    }
     const filteredItems = inventory.filter(item =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -12,8 +15,7 @@ const StoreItemGrid = ({}) => {
 
     return (
         <div className="storeItemGrid">
-            <input type="text" value={searchTerm} onChange={event =>
-                setSearchTerm(event.target.value)} />
+            <input type="text" value={searchTerm} onChange={handleSearch} />
             <div className="grid">
                 {filteredItems.map((item, index) =>
                     <StoreItemDisplayer item={item} key={index} />
