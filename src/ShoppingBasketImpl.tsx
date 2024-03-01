@@ -6,40 +6,22 @@ export class ShoppingBasketImpl implements ShoppingBasket {
     constructor() {
         this.items = new Map<StoreItemReference, number>();
     }
-
     addSamples(item: string, n: number): ShoppingBasket {
-        throw new Error('Method not implemented.');
+        this.items.set(item, (this.items.get(item) || 0) + n);
+        return this;
     }
-
-    clear(): ShoppingBasket {
-        throw new Error('Method not implemented.');
-    }
-
-    getSamples(item: string): number {
-        throw new Error('Method not implemented.');
-    }
-    
-    getAllItems(): [string, number][] {
-        throw new Error('Method not implemented.');
-    }
-
-    addItem(item: StoreItemReference): ShoppingBasket {
-        const count = this.items.get(item) || 0;
-        this.items.set(item, count + 1);
-        return new ShoppingBasketImpl();
-    }
-
-    removeItem(item: StoreItemReference): ShoppingBasket {
+    removeItem(item: string): ShoppingBasket {
         this.items.delete(item);
-        return new ShoppingBasketImpl();
+        return this;
     }
-
-    updateQuantity(item: StoreItemReference, quantity: number): ShoppingBasket {
-        this.items.set(item, quantity);
-        return new ShoppingBasketImpl();
+    clear(): ShoppingBasket {
+        this.items.clear();
+        return this;
     }
-
-    getItems(): Map<StoreItemReference, number> {
-        return this.items;
+    getSamples(item: string): number {
+        return this.items.get(item) || 0;
     }
+    getAllItems(): [string, number][] {
+        return Array.from(this.items.entries());
+    }  
 }
