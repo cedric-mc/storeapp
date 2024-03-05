@@ -30,8 +30,6 @@ function App() {
         basket.saveBasket();
     }, [basket]);
 
-    setInventory(inventoryFile);
-
     return (
         <div className="bodyStore">
             <h1 className="title">Une boutique réactionnelle</h1>
