@@ -1,6 +1,6 @@
 import React from "react";
 import StoreItemDisplayer from "./StoreItemDisplayer";
-import "./StoreItemGrid.css";
+import "./style/StoreItemGrid.css";
 import { StoreItem } from "./StoreItem";
 
 interface StoreItemGridProps {

@@ -1,5 +1,5 @@
 import { StoreItem } from "./StoreItem";
-import './StoreItemDisplayer.css';
+import './style/StoreItemDisplayer.css';
 
 interface StoreItemDisplayerProps {
     item: StoreItem;

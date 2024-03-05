@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './style/App.css';
 import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
