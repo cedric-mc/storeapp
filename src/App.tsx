@@ -33,7 +33,7 @@ function App() {
     // Chargement de l'inventaire
     React.useEffect(() => {
         setInventory(inventoryFile as StoreItem[]);
-    });
+    }, []);
 
     return (
         <div className="bodyStore">
