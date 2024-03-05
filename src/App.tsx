@@ -9,13 +9,25 @@ function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
     const [inventory, setInventory] = React.useState<StoreItem[]>([]);
 
+    // Handler pour ajouter un article au panier
     const handleAddToBasket = (item: StoreItem) => {
         setBasket(b => b.addSamples(item.id, 1) as ShoppingBasketImpl);
     };
 
+    // Handler pour vider le panier
     const handleClearBasket = () => {
         setBasket(b => b.clear() as ShoppingBasketImpl);
     };
+
+    // Chargement de l'inventaire
+    React.useEffect(() => {
+        setBasket(b => b.loadBasket() as ShoppingBasketImpl);
+    }, []);
+
+    // Chargement du panier
+    React.useEffect(() => {
+        basket.saveBasket();
+    }, [basket]);
 
     return (
         <div className="bodyStore">
