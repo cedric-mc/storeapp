@@ -20,7 +20,7 @@ function App() {
         setBasket(b => b.clear() as ShoppingBasketImpl);
     };
 
-    // Chargement de l'inventaire
+    // Chargement du panier
     React.useEffect(() => {
         setBasket(b => b.loadBasket() as ShoppingBasketImpl);
     }, []);
@@ -29,6 +29,11 @@ function App() {
     React.useEffect(() => {
         basket.saveBasket();
     }, [basket]);
+
+    // Chargement de l'inventaire
+    React.useEffect(() => {
+        setInventory(inventoryFile as StoreItem[]);
+    });
 
     return (
         <div className="bodyStore">
