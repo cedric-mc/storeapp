@@ -1,8 +1,12 @@
 import { StoreItem } from "./StoreItem";
 import './StoreItemDisplayer.css';
 
-const StoreItemDisplayer = (props: { item: StoreItem }) => {
-    const item = props.item;
+interface StoreItemDisplayerProps {
+    item: StoreItem;
+    onAddToBasket: (item: StoreItem) => void;
+}
+
+const StoreItemDisplayer: React.FC<StoreItemDisplayerProps> = ({ item, onAddToBasket }) => {
     return (
         <div className="storeItem">
             <h2>{item.name}</h2>
@@ -12,6 +16,7 @@ const StoreItemDisplayer = (props: { item: StoreItem }) => {
             }
             {item.discount !== undefined ? <div>Discount!</div> : <div>Normal price!</div>}
             {item.picture !== undefined ? <img className="storeItemPicture" src={item.picture} alt="Beautiful picture of the item" /> : <div className="storeItemPicture">No picture available</div>}
+            <button onClick={() => onAddToBasket(item)}>Ajouter au panier</button>
         </div>
     );
 }

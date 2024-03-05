@@ -5,9 +5,10 @@ import { StoreItem } from './StoreItem';
 interface ShoppingBasketManagerProps {
     basket: ShoppingBasket;
     inventory: StoreItem[];
+    onClearBasket: () => void;
 }
 
-export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ basket, inventory }) => {
+export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ basket, inventory, onClearBasket }) => {
     const items = basket.getAllItems();
 
     return (
@@ -34,6 +35,7 @@ export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ ba
                     );
                 })}
             </tbody>
+            <button onClick={onClearBasket}>Réinitialiser le panier</button>
         </table>
     );
 };
