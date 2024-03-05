@@ -4,6 +4,7 @@ import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
 import { ShoppingBasketManager } from './ShoppingBasketManager';
+import inventoryFile from './inventory.json';
 
 function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
@@ -28,6 +29,8 @@ function App() {
     React.useEffect(() => {
         basket.saveBasket();
     }, [basket]);
+
+    setInventory(inventoryFile);
 
     return (
         <div className="bodyStore">
