@@ -12,7 +12,11 @@ function App() {
 
     // Handler pour ajouter un article au panier
     const handleAddToBasket = (item: StoreItem) => {
-        setBasket(b => b.addSamples(item.id, 1) as ShoppingBasketImpl);
+        setBasket(b => {
+            const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
+            newBasket.saveBasket();
+            return newBasket;
+        });
     };
 
     // Handler pour vider le panier
