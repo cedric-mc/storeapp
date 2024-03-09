@@ -8,7 +8,8 @@ export class ShoppingBasketImpl implements ShoppingBasket {
     }
 
     addSamples(item: string, n: number): ShoppingBasket {
-        this.items.set(item, (this.items.get(item) || 0) + n);
+        const currentCount = this.items.get(item) || 0;
+        this.items.set(item, currentCount + n);
         return this;
     }
 
