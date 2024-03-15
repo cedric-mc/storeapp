@@ -4,7 +4,6 @@ import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
 import { ShoppingBasketManager } from './ShoppingBasketManager';
-import { StoreItemReference } from './ShoppingBasket';
 import inventoryFile from './inventory.json';
 
 function App() {
@@ -27,19 +26,11 @@ function App() {
         });
     }, []);
 
-    // Chargement du panier
-    React.useEffect(() => {
-        setBasket(b => b.loadBasket() as ShoppingBasketImpl);
-    }, [basket]);
-
-    // Sauvegarde du panier
-    React.useEffect(() => {
-        basket.saveBasket();
-    }, [basket]);
-
     // Chargement de l'inventaire
     React.useEffect(() => {
         setInventory(inventoryFile as StoreItem[]);
+        basket.loadBasket();
+        basket.saveBasket();
     }, []);
 
     return (
