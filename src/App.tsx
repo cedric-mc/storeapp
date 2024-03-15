@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './style/App.css';
 import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
@@ -7,8 +7,8 @@ import { ShoppingBasketManager } from './ShoppingBasketManager';
 import inventoryFile from './inventory.json';
 
 function App() {
-    const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
-    const [inventory, setInventory] = React.useState<StoreItem[]>([]);
+    const [basket, setBasket] = useState(new ShoppingBasketImpl());
+    const [inventory, setInventory] = useState<StoreItem[]>([]);
     
     const addToBasket = useCallback((item: StoreItem) => {
         setBasket(prevBasket => {
