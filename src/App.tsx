@@ -10,8 +10,7 @@ function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
     const [inventory, setInventory] = React.useState<StoreItem[]>([]);
 
-    // Handler pour ajouter un article au panier
-    const handleAddToBasket = (item: StoreItem) => {
+    const addToBasket = (item: StoreItem) => {
         setBasket(b => {
             const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
             newBasket.saveBasket();
@@ -19,9 +18,8 @@ function App() {
         });
     };
 
-    // Handler pour vider le panier
-    const handleClearBasket = () => {
-        setBasket(b => b.clear() as ShoppingBasketImpl);
+    const clearBasket = () => {
+        setBasket(new ShoppingBasketImpl());
     };
 
     // Chargement du panier
@@ -42,8 +40,8 @@ function App() {
     return (
         <div className="bodyStore">
             <h1 className="title">Une boutique réactionnelle</h1>
-            <StoreItemGrid inventory={inventory} onAddToBasket={handleAddToBasket} />
-            <ShoppingBasketManager basket={basket} inventory={inventory} onClearBasket={handleClearBasket} />
+            <StoreItemGrid inventory={inventory} onAddToBasket={addToBasket} />
+            <ShoppingBasketManager basket={basket} inventory={inventory} onClearBasket={clearBasket} />
         </div>
     );
 }

@@ -22,17 +22,19 @@ export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ ba
                 </tr>
             </thead>
             <tbody>
-                {Array.from(items.entries()).map(([itemReference, quantity]) => {
-                    const item = inventory.find(i => i.id === String(itemReference));
-                    if (!item) return null;
-
-                    return (
-                        <tr key={itemReference}>
-                            <td>{quantity}</td>
-                            <td>{item.name}</td>
-                            <td>{Number(item.price) * Number(quantity)}</td>
-                        </tr>
-                    );
+                {basket.getAllItems().map(([item, quantity]) => {
+                    const storeItem = inventory.find((product) => product.name === item);
+                    if (storeItem) {
+                        return (
+                            <tr key={item}>
+                                <td>{quantity}</td>
+                                <td>{item}</td>
+                                <td>€{storeItem.price.toFixed(2)}</td>
+                                <td>€{(storeItem.price * quantity).toFixed(2)}</td>
+                            </tr>
+                        );
+                    }
+                    return null;
                 })}
             </tbody>
             <button className="clearButton" onClick={onClearBasket}>Réinitialiser le panier</button>
