@@ -9,14 +9,14 @@ import inventoryFile from './inventory.json';
 function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
     const [inventory, setInventory] = React.useState<StoreItem[]>([]);
-
+    
     const addToBasket = useCallback((item: StoreItem) => {
-        setBasket(b => {
-            const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
+        setBasket(prevBasket => {
+            const newBasket = prevBasket.addSamples(item.name, 1) as ShoppingBasketImpl;
             newBasket.saveBasket();
             return newBasket;
         });
-    }, [basket]);
+    }, []);
 
     const clearBasket = useCallback(() => {
         setBasket(b => {
