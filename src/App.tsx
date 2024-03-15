@@ -11,15 +11,15 @@ function App() {
     const [inventory, setInventory] = React.useState<StoreItem[]>([]);
 
     const addToBasket = (item: StoreItem) => {
-        setBasket(b => {
+        setBasket((b: ShoppingBasketImpl): ShoppingBasketImpl => {
             const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
             newBasket.saveBasket();
             return newBasket;
         });
     };
-
+    
     const clearBasket = () => {
-        setBasket(b => {
+        setBasket((b: ShoppingBasketImpl): ShoppingBasketImpl => {
             const newBasket = b.clear() as ShoppingBasketImpl;
             newBasket.saveBasket();
             return newBasket;

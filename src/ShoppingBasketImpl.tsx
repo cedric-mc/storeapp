@@ -7,9 +7,14 @@ export class ShoppingBasketImpl implements ShoppingBasket {
         this.items = new Map<StoreItemReference, number>();
     }
 
-    addSamples(item: string, n: number): ShoppingBasket {
-        const currentCount = this.items.get(item) || 0;
-        this.items.set(item, currentCount + n);
+    addSamples(item: StoreItemReference, n: number): ShoppingBasket {
+        const currentQuantity = this.items.get(item) || 0;
+        const newQuantity = currentQuantity + n;
+        if (newQuantity <= 0) {
+            this.items.delete(item);
+        } else {
+            this.items.set(item, newQuantity);
+        }
         return this;
     }
 
