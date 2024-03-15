@@ -4,7 +4,6 @@ import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
 import { ShoppingBasketManager } from './ShoppingBasketManager';
-import { StoreItemReference } from './ShoppingBasket';
 import inventoryFile from './inventory.json';
 
 function App() {
