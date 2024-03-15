@@ -8,7 +8,7 @@ import inventoryFile from './inventory.json';
 
 function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
-    const [inventory] = React.useState<StoreItem[]>(inventoryFile as StoreItem[]);
+    const [inventory, setInventory] = React.useState<StoreItem[]>([]);
 
     const addToBasket = (item: StoreItem) => {
         setBasket(b => {
@@ -31,6 +31,11 @@ function App() {
     React.useEffect(() => {
         basket.saveBasket();
     }, [basket]);
+
+    // Chargement de l'inventaire
+    React.useEffect(() => {
+        setInventory(inventoryFile as StoreItem[]);
+    }, []);
 
     return (
         <div className="bodyStore">
