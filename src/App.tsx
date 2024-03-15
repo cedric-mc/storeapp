@@ -19,7 +19,11 @@ function App() {
     };
 
     const clearBasket = () => {
-        setBasket(new ShoppingBasketImpl());
+        setBasket(b => {
+            const newBasket = b.clear() as ShoppingBasketImpl;
+            newBasket.saveBasket();
+            return newBasket;
+        });
     };
 
     // Chargement du panier
