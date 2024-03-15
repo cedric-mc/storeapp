@@ -35,7 +35,7 @@ export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ ba
                     );
                 })}
             </tbody>
-            <button onClick={onClearBasket}>Réinitialiser le panier</button>
+            <button className="clearButton" onClick={onClearBasket}>Réinitialiser le panier</button>
         </table>
     );
 };
