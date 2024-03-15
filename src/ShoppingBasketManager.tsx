@@ -9,8 +9,6 @@ interface ShoppingBasketManagerProps {
 }
 
 export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ basket, inventory, onClearBasket }) => {
-    const items = basket.getAllItems();
-
     return (
         <table>
             <thead>
