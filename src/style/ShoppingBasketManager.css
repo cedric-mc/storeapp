@@ -1,14 +1,27 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     padding: 8px;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+tr:hover {
+    background-color: gray;
+    color: black;
+}
 
 th {
     background-color: #4CAF50;
@@ -16,6 +29,7 @@ th {
 }
 
 .clearButton {
+    text-align: center;
     background-color: #f44336;
     color: white;
     padding: 14px 20px;

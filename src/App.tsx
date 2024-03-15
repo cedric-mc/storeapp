@@ -4,31 +4,28 @@ import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
 import { ShoppingBasketManager } from './ShoppingBasketManager';
+import { StoreItemReference } from './ShoppingBasket';
 import inventoryFile from './inventory.json';
 
 function App() {
     const [basket, setBasket] = React.useState(new ShoppingBasketImpl());
     const [inventory, setInventory] = React.useState<StoreItem[]>([]);
 
-    // const addToBasket = (item: StoreItem) => {
-    //     setBasket((b: ShoppingBasketImpl): ShoppingBasketImpl => {
-    //         const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
-    //         newBasket.saveBasket();
-    //         return newBasket;
-    //     });
-    // };
-
     const addToBasket = useCallback((item: StoreItem) => {
-        setBasket(basket.addSamples(item.name, 1) as ShoppingBasketImpl);
+        setBasket(b => {
+            const newBasket = b.addSamples(item.name, 1) as ShoppingBasketImpl;
+            newBasket.saveBasket();
+            return newBasket;
+        });
     }, [basket]);
-    
-    const clearBasket = () => {
-        setBasket((b: ShoppingBasketImpl): ShoppingBasketImpl => {
+
+    const clearBasket = useCallback(() => {
+        setBasket(b => {
             const newBasket = b.clear() as ShoppingBasketImpl;
             newBasket.saveBasket();
             return newBasket;
         });
-    };
+    }, []);
 
     // Chargement du panier
     React.useEffect(() => {
