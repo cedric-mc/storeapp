@@ -28,11 +28,6 @@ function App() {
 
     // Chargement du panier
     React.useEffect(() => {
-        setBasket(b => b.loadBasket() as ShoppingBasketImpl);
-    }, [basket]);
-
-    // Chargement du panier
-    React.useEffect(() => {
         basket.saveBasket();
     }, [basket]);
 
@@ -40,6 +35,18 @@ function App() {
     React.useEffect(() => {
         setInventory(inventoryFile as StoreItem[]);
     }, []);
+
+    React.useEffect(() => {
+        const saveBasketToLocalStorage = () => {
+            basket.saveBasket();
+        };
+
+        window.addEventListener('beforeunload', saveBasketToLocalStorage);
+
+        return () => {
+            window.removeEventListener('beforeunload', saveBasketToLocalStorage);
+        };
+    }, [basket]); // Sauvegarde du panier lors du déchargement du composant ou à chaque changement du panier
 
     return (
         <div className="bodyStore">

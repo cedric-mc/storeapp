@@ -1,4 +1,5 @@
 import { ShoppingBasket, StoreItemReference } from './ShoppingBasket';
+import inventory from './inventory.json';
 
 export class ShoppingBasketImpl implements ShoppingBasket {
     private items: Map<StoreItemReference, number>;
@@ -49,5 +50,20 @@ export class ShoppingBasketImpl implements ShoppingBasket {
             this.items = new Map();
         }
         return this;
+    }
+
+    getPrice(item: string): number {
+        return 0;
+    }
+
+    computeOrderAmount(): number {
+        let totalAmount = 0;
+        Array.from(this.items.entries()).forEach(([item, quantity]) => {
+            const storeItem = inventory.find(item => item.id === item.id);
+            if (storeItem) {
+                totalAmount += storeItem.price * quantity;
+            }
+        });
+        return totalAmount;
     }
 }
