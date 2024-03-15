@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import './style/App.css';
 import StoreItemGrid from './StoreItemGrid';
 import { ShoppingBasketImpl } from './ShoppingBasketImpl';
@@ -26,8 +26,8 @@ function App() {
         });
     }, []);
 
-    // Chargement de l'inventaire
-    React.useEffect(() => {
+    // Chargement de l'inventaire, et restauration du panier depuis le local storage
+    useEffect(() => {
         setInventory(inventoryFile as StoreItem[]);
         basket.loadBasket();
         basket.saveBasket();
