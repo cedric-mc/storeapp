@@ -39,7 +39,7 @@ export const ShoppingBasketManager: React.FC<ShoppingBasketManagerProps> = ({ ba
                 </tbody>
             </table>
             <button className="clearButton" onClick={onClearBasket}>Réinitialiser le panier</button>
-            <p>Prix total : {basket.computeOrderAmount().toFixed(2)} €</p>
+            {/* <p>Prix total : {basket.computeOrderAmount().toFixed(2)} €</p> */}
         </div>
     );
 };
