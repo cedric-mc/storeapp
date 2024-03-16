@@ -16,7 +16,7 @@ function App() {
             newBasket.saveBasket();
             return newBasket;
         });
-    }, []);
+    }, [setBasket]);
 
     const clearBasket = useCallback(() => {
         setBasket(b => {
@@ -24,7 +24,7 @@ function App() {
             newBasket.saveBasket();
             return newBasket;
         });
-    }, []);
+    }, [setBasket]);
 
     // Chargement de l'inventaire, et restauration du panier depuis le local storage
     useEffect(() => {
