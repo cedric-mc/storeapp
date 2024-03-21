@@ -31,7 +31,7 @@ function App() {
         setInventory(inventoryFile as StoreItem[]);
         basket.loadBasket();
         basket.saveBasket();
-    }, []);
+    }, [setInventory]);
 
     return (
         <div className="bodyStore">
