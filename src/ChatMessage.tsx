@@ -7,3 +7,5 @@ interface Message {
 }
 
 const ChatMessage = (props: { message: Message }) => { }
+
+export default ChatMessage;
