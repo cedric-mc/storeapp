@@ -1,4 +1,5 @@
 import React from "react";
+import "./style/ChatMessageDisplayer.css"
 
 const ChatMessageDisplayer = (props: { messages: { name: string, message: string }[], onMessageSent: (message: string) => void }) => {
     return (
