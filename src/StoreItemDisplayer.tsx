@@ -6,7 +6,7 @@ interface StoreItemDisplayerProps {
     onAddToBasket: (item: StoreItem) => void;
 }
 
-const StoreItemDisplayer = (props: { item: StoreItem, onAddToBasket: (item: StoreItem) => void }) => {
+const StoreItemDisplayer = (props: StoreItemDisplayerProps) => {
     const item = props.item;
     const onAddToBasket = props.onAddToBasket;
     return (
