@@ -1,4 +1,3 @@
-/* Style pour afficher un message dans le chat */
 .chat-message {
   display: flex;
   flex-direction: row;
