@@ -38,11 +38,19 @@ export class ShoppingBasketImpl implements ShoppingBasket {
     }
 
     saveBasket(): void {
-        localStorage.setItem("basket", JSON.stringify(Array.from(this.items.entries())));
+        try {
+            localStorage.setItem("basket", JSON.stringify(Array.from(this.items.entries())));
+        } catch (error) {
+            console.warn("Failed to save basket to local storage.", error);
+        }
     }
 
     loadBasket(): ShoppingBasket {
         try {
+            const loadedItems = localStorage.getItem("basket");
+            if (loadedItems) {
+                const parsedItems: 
+            }
             const loadedItems = JSON.parse(localStorage.getItem("basket") || "[]");
             this.items = new Map(loadedItems);
         } catch (error) {
