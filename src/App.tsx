@@ -26,11 +26,18 @@ function App() {
         });
     }, [setBasket]);
 
+    /*useEffect(() => {
+        fetchInventory();
+    }, []);*/
+
+    useEffect(() => {
+        basket.saveBasket();
+    }, [basket]);
+
     // Chargement de l'inventaire, et restauration du panier depuis le local storage
     useEffect(() => {
         setInventory(inventoryFile as StoreItem[]);
         basket.loadBasket();
-        basket.saveBasket();
     }, [setInventory]);
 
     return (
