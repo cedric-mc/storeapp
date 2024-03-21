@@ -6,7 +6,9 @@ interface StoreItemDisplayerProps {
     onAddToBasket: (item: StoreItem) => void;
 }
 
-const StoreItemDisplayer: React.FC<StoreItemDisplayerProps> = ({ item, onAddToBasket }) => {
+const StoreItemDisplayer = (props: { item: StoreItem, onAddToBasket: () => void }) => {
+    const item = props.item;
+    const onAddToBasket = props.onAddToBasket;
     return (
         <div className="storeItem">
             <h2>{item.name}</h2>
@@ -25,7 +27,7 @@ const StoreItemDisplayer: React.FC<StoreItemDisplayerProps> = ({ item, onAddToBa
                 <div className="storeItemPicture">No picture available</div>
             )}
             <br />
-            <button className="addItemButton" onClick={() => onAddToBasket(item)}>Ajouter au panier</button>
+            <button className="addItemButton" onClick={onAddToBasket}>Ajouter au panier</button>
         </div>
     );
 }

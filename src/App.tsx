@@ -43,7 +43,7 @@ function App() {
     return (
         <div className="bodyStore">
             <h1 className="title">Une boutique réactionnelle</h1>
-            <StoreItemGrid inventory={inventory} onAddToBasket={addToBasket} />
+            <StoreItemGrid inventory={inventory} onAddToBasket={item => setBasket(prevBasket => prevBasket.addSamples(item.name, 1) as ShoppingBasketImpl)} />
             <ShoppingBasketManager basket={basket} inventory={inventory} onClearBasket={clearBasket} />
         </div>
     );
