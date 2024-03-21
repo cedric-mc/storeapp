@@ -6,7 +6,7 @@ interface StoreItemDisplayerProps {
     onAddToBasket: (item: StoreItem) => void;
 }
 
-const StoreItemDisplayer = (props: { item: StoreItem, onAddToBasket: () => void }) => {
+const StoreItemDisplayer = (props: { item: StoreItem, onAddToBasket: (item: StoreItem) => void }) => {
     const item = props.item;
     const onAddToBasket = props.onAddToBasket;
     return (
@@ -27,7 +27,7 @@ const StoreItemDisplayer = (props: { item: StoreItem, onAddToBasket: () => void 
                 <div className="storeItemPicture">No picture available</div>
             )}
             <br />
-            <button className="addItemButton" onClick={onAddToBasket}>Ajouter au panier</button>
+            <button className="addItemButton" onClick={() => onAddToBasket(item)}>Ajouter au panier</button>
         </div>
     );
 }

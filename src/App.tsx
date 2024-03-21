@@ -9,8 +9,9 @@ import inventoryFile from './inventory.json';
 function App() {
     const [basket, setBasket] = useState(new ShoppingBasketImpl());
     const [inventory, setInventory] = useState<StoreItem[]>([]);
-    
+
     const addToBasket = useCallback((item: StoreItem) => {
+        console.log(`Adding ${item.name} to basket`);
         setBasket(prevBasket => {
             const newBasket = prevBasket.addSamples(item.name, 1) as ShoppingBasketImpl;
             newBasket.saveBasket();

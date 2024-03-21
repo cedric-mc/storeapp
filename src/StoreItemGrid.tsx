@@ -8,7 +8,7 @@ interface StoreItemGridProps {
     onAddToBasket: (item: StoreItem) => void;
 }
 
-const StoreItemGrid = (props: { inventory: StoreItem[], onAddToBasket: (item: StoreItem) => void }) => {
+const StoreItemGrid = (props: StoreItemGridProps) => {
     const [searchTerm, setSearchTerm] = React.useState("");
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
@@ -24,7 +24,7 @@ const StoreItemGrid = (props: { inventory: StoreItem[], onAddToBasket: (item: St
             <input type="text" value={searchTerm} onChange={handleSearch}/>
             <div className="grid">
                 {filteredItems.map((item, index) =>
-                    <StoreItemDisplayer item={item} key={index} onAddToBasket={() => props.onAddToBasket(item)}/>
+                    <StoreItemDisplayer item={item} key={index} onAddToBasket={props.onAddToBasket}/>
                 )}
             </div>
         </div>
