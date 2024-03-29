@@ -28,14 +28,21 @@ function App() {
     }, [setBasket]);
 
     useEffect(() => {
-        basket.saveBasket();
-    }, [basket]);
-
-    // Chargement de l'inventaire, et restauration du panier depuis le local storage
-    useEffect(() => {
+        // Load the inventory when the component is mounted
         setInventory(inventoryFile);
+        // Load the basket when the component is mounted
         basket.loadBasket();
-    }, [basket, setInventory]);
+
+        // Save the basket when the component is unmounted
+        return () => {
+            basket.saveBasket();
+        };
+    }, [basket]); // Run only on mount and unmount
+
+    useEffect(() => {
+        // Save the basket whenever it changes
+        basket.saveBasket();
+    }, [basket]); // Run whenever `basket` changes
 
     return (
         <div className="bodyStore">
