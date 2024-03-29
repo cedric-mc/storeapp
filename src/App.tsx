@@ -27,24 +27,20 @@ function App() {
         });
     }, [setBasket]);
 
-    /*useEffect(() => {
-        fetchInventory();
-    }, []);*/
-
     useEffect(() => {
         basket.saveBasket();
     }, [basket]);
 
     // Chargement de l'inventaire, et restauration du panier depuis le local storage
     useEffect(() => {
-        setInventory(inventoryFile as StoreItem[]);
+        setInventory(inventoryFile);
         basket.loadBasket();
-    }, [setInventory]);
+    }, [basket, setInventory]);
 
     return (
         <div className="bodyStore">
             <h1 className="title">Une boutique réactionnelle</h1>
-            <StoreItemGrid inventory={inventory} onAddToBasket={item => setBasket(prevBasket => prevBasket.addSamples(item.name, 1) as ShoppingBasketImpl)} />
+            <StoreItemGrid inventory={inventory} onAddToBasket={addToBasket} />
             <ShoppingBasketManager basket={basket} inventory={inventory} onClearBasket={clearBasket} />
         </div>
     );
