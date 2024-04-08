@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './style/App.css';
-import StoreItemGrid from './StoreItemGrid';
-import { ShoppingBasketImpl } from './ShoppingBasketImpl';
+import StoreItemGrid from './components/StoreItemGrid';
+import { ShoppingBasketImpl } from './components/ShoppingBasketImpl';
 import { StoreItem } from './StoreItem';
-import { ShoppingBasketManager } from './ShoppingBasketManager';
+import { ShoppingBasketManager } from './components/ShoppingBasketManager';
 import inventoryFile from './inventory.json';
 
 function App() {

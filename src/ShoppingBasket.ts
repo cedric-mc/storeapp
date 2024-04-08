@@ -1,3 +1,5 @@
+import {ShippingAddress} from "./ShippingAddress";
+
 export type StoreItemReference = string;
 
 export interface ShoppingBasket {
@@ -8,4 +10,5 @@ export interface ShoppingBasket {
     getAllItems(): [StoreItemReference, number][] // return all the items in the basket with the number of samples
     getPrice(item: StoreItemReference): number // return the price of the item
     computeOrderAmount(): number // return the total amount of the order
+    address: ShippingAddress; // the address where the order will be shipped
 }

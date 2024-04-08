@@ -1,7 +1,7 @@
 import React from "react";
 import StoreItemDisplayer from "./StoreItemDisplayer";
-import "./style/StoreItemGrid.css";
-import {StoreItem} from "./StoreItem";
+import "../style/StoreItemGrid.css";
+import {StoreItem} from "../StoreItem";
 
 interface StoreItemGridProps {
     inventory: StoreItem[];

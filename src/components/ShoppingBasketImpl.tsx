@@ -1,5 +1,5 @@
-import { ShoppingBasket, StoreItemReference } from './ShoppingBasket';
-import inventory from './inventory.json';
+import { ShoppingBasket, StoreItemReference } from '../ShoppingBasket';
+import inventory from '../inventory.json';
 
 export class ShoppingBasketImpl implements ShoppingBasket {
     private basket: Map<StoreItemReference, number> = new Map();

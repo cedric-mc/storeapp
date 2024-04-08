@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShoppingBasket } from './ShoppingBasket';
-import { StoreItem } from './StoreItem';
-import './style/ShoppingBasketManager.css';
+import { ShoppingBasket } from '../ShoppingBasket';
+import { StoreItem } from '../StoreItem';
+import '../style/ShoppingBasketManager.css';
 
 interface ShoppingBasketManagerProps {
     basket: ShoppingBasket;
