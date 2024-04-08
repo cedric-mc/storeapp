@@ -28,21 +28,17 @@ function App() {
     }, [setBasket]);
 
     useEffect(() => {
-        // Load the inventory when the component is mounted
         setInventory(inventoryFile);
-        // Load the basket when the component is mounted
         basket.loadBasket();
 
-        // Save the basket when the component is unmounted
         return () => {
             basket.saveBasket();
         };
-    }, [basket]); // Run only on mount and unmount
+    }, [basket]);
 
     useEffect(() => {
-        // Save the basket whenever it changes
         basket.saveBasket();
-    }, [basket]); // Run whenever `basket` changes
+    }, [basket]);
 
     return (
         <div className="bodyStore">
